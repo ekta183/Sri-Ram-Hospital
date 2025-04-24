@@ -13,13 +13,7 @@ const app = express();
 config({ path: "./config.env" });
 
 // CORS configuration
-app.use(
-  cors({
-    origin: ["https://sri-ram-hospital.onrender.com", "http://localhost:5174"], // Removed trailing slashes
-    methods: ["GET", "POST", "DELETE", "PUT", "OPTIONS"], // Added OPTIONS method
-    credentials: true,
-  })
-);
+app.use(cors({ origin: '*' }));
 
 app.use(cookieParser());
 app.use(express.json());
