@@ -22,14 +22,14 @@ const userSchema = new mongoose.Schema({
   phone: {
     type: String,
     required: [true, "Phone Is Required!"],
-    minLength: [11, "Phone Number Must Contain Exact 11 Digits!"],
-    maxLength: [11, "Phone Number Must Contain Exact 11 Digits!"],
+    minLength: [10, "Phone Number Must Contain Exact 10 Digits!"],
+    maxLength: [10, "Phone Number Must Contain Exact 10 Digits!"],
   },
   nic: {
     type: String,
-    required: [true, "NIC Is Required!"],
-    minLength: [13, "NIC Must Contain Only 13 Digits!"],
-    maxLength: [13, "NIC Must Contain Only 13 Digits!"],
+    required: [true, "Aadhar no. Is Required!"],
+    minLength: [12, "Aadhar no. Must Contain Only 12 Digits!"],
+    maxLength: [12, "Aadhar no. Must Contain Only 12 Digits!"],
   },
   dob: {
     type: Date,
@@ -51,7 +51,7 @@ const userSchema = new mongoose.Schema({
     required: [true, "User Role Required!"],
     enum: ["Patient", "Doctor", "Admin"],
   },
-  doctorDepartment:{
+  doctorDepartment: {
     type: String,
   },
   docAvatar: {
