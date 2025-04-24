@@ -15,7 +15,7 @@ config({ path: "./config.env" });
 // CORS configuration
 const allowedOrigins = [
   'http://localhost:5174',
-  'https://sri-ram-hospital.onrender.com/',
+  'https://sri-ram-hospital.onrender.com',
 ];
 
 app.use(cors({
