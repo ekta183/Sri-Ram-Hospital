@@ -13,7 +13,7 @@ const Dashboard = () => {
     const fetchAppointments = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/v1/appointment/getall",
+          "https://sri-ram-hospital-backend.onrender.com/api/v1/appointment/getall",
           { withCredentials: true }
         );
         setAppointments(data.appointments);
@@ -27,7 +27,7 @@ const Dashboard = () => {
   const handleUpdateStatus = async (appointmentId, status) => {
     try {
       const { data } = await axios.put(
-        `http://localhost:4000/api/v1/appointment/update/${appointmentId}`,
+        `https://sri-ram-hospital-backend.onrender.com/api/v1/appointment/update/${appointmentId}`,
         { status },
         { withCredentials: true }
       );
@@ -65,7 +65,7 @@ const Dashboard = () => {
                 operations. You can easily add new doctors, review and accept or
                 reject appointment requests from patients, and manage incoming
                 messages to ensure smooth communication between doctors and
-                patients. 
+                patients.
               </p>
             </div>
           </div>
