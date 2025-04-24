@@ -13,7 +13,21 @@ const app = express();
 config({ path: "./config.env" });
 
 // CORS configuration
-app.use(cors({ origin: '*' }));
+const allowedOrigins = [
+  'http://localhost:5174',
+  'https://sri-ram-hospital.onrender.com/',
+];
+
+app.use(cors({
+  origin: (origin, callback) => {
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
+}));
 
 app.use(cookieParser());
 app.use(express.json());
